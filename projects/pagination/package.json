@@ -1,0 +1,23 @@
+{
+  "name": "pagination-jnf",
+  "version": "0.0.2",
+  "peerDependencies": {
+    "@angular/common": "^14.2.0",
+    "@angular/core": "^14.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "description": "pagination library",
+  "author": {
+    "name": "nasir farhadi",
+    "email": "nasirfarhadi92@gmail.com",
+    "url": "https://www.linkedin.com/in/nasir-farhadi/"
+  },
+  "keywords": [
+    "pagination",
+    "custom",
+    "library",
+    "angular"
+  ]
+}

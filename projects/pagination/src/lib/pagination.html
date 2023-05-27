@@ -1,0 +1,19 @@
+<div [class]="parentClass" *ngIf="hidePaginate" [ngClass]="{'rtl': rtlMode}">
+  <ul [class]="parentListClass">
+    <li [class]="itemClass + ' ' + itemArrowClass" (click)="selectPage(currentPage - 1)" *ngIf="currentPage > 1"
+      [innerHTML]="arrowPrev"></li>
+    <li [class]="itemClass" (click)="selectPage(startPage)" [ngClass]="{'active':currentPage === startPage}">
+      {{startPage}}
+    </li>
+    <li [class]="itemClass + ' ' + itemSpaceClass" *ngIf="currentPage > 2 && paginationList.length > 4">...</li>
+    <li [class]="itemClass" *ngFor="let page of paginationList | slice:rangePageInsideDown:rangePageInsideUp"
+      [ngClass]="{'active':currentPage === page}" (click)="selectPage(page)">{{page}}</li>
+    <li [class]="itemClass + ' ' + itemSpaceClass" *ngIf="currentPage <= 3 && paginationList.length > 4">...</li>
+    <li [class]="itemClass + ' ' + itemSpaceClass" *ngIf="currentPage > 3 && (currentPage < endPage - 2) && paginationList.length > 4">...</li>
+    <li [class]="itemClass" (click)="selectPage(endPage)" [ngClass]="{'active':currentPage === endPage}">
+      {{endPage}}
+    </li>
+    <li [class]="itemClass + ' ' + itemArrowClass" (click)="selectPage(currentPage + 1)" *ngIf="currentPage < endPage"
+      [innerHTML]="arrowNext"></li>
+  </ul>
+</div>
